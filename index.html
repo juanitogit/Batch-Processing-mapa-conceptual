@@ -10,7 +10,7 @@
     <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        @import url('https://fonts.cdnfonts.com/css/sf-pro-display');
         
         :root {
             --bg-grad-1: #f8fafc;
@@ -24,7 +24,7 @@
             margin: 0; padding: 0;
             height: 100%; width: 100%;
             overflow: hidden;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
             background: linear-gradient(135deg, var(--bg-grad-1) 0%, var(--bg-grad-2) 100%);
             color: var(--apple-text);
         }
@@ -221,14 +221,22 @@
         }
         .apple-btn {
             width: 54px; height: 54px; border-radius: 27px;
-            background: rgba(255,255,255,0.7); backdrop-filter: blur(15px);
-            border: 1px solid rgba(255,255,255,0.5); color: var(--apple-text);
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            color: var(--apple-text);
             display: flex; align-items: center; justify-content: center;
-            font-size: 20px; box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            cursor: pointer; transition: 0.2s;
+            font-size: 20px; 
+            cursor: pointer; transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
         }
         .apple-btn.wide { width: auto; padding: 0 24px; font-size: 16px; font-weight: 600;}
-        .apple-btn:hover { background: white; transform: scale(1.05); }
+        .apple-btn:hover { 
+            background: rgba(255, 255, 255, 0.7);
+            transform: scale(1.05); 
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+        }
 
         /* Modal */
         .modal-overlay {
@@ -275,11 +283,14 @@
             
             .apple-btn {
                 width: 44px; height: 44px; border-radius: 22px; font-size: 18px;
-                background: rgba(255,255,255,0.9); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
-                border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+                background: rgba(255, 255, 255, 0.5);
+                backdrop-filter: blur(20px) saturate(180%);
+                -webkit-backdrop-filter: blur(20px) saturate(180%);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             }
             .apple-btn.wide { padding: 0 15px; width: auto; font-size: 14px; }
-            .apple-btn:active { background: rgba(0,0,0,0.05); }
+            .apple-btn:active { background: rgba(255, 255, 255, 0.7); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15); }
         }
     </style>
 </head>
@@ -324,10 +335,11 @@
                 <li><a href="https://www.tutorialspoint.com/operating_system/batch_processing_operating_system.htm" target="_blank">TutorialsPoint</a><span class="ref-desc">Operating System Batch Processing. Arquitectura y evolución histórica.</span></li>
                 <li><a href="https://testbook.com/gate/batch-operating-system-notes" target="_blank">Testbook</a><span class="ref-desc">Notas sobre el monitor de lotes y ejecución secuencial (FIFO).</span></li>
                 <li><a href="https://es.talend.com/resources/batch-processing/" target="_blank">Talend</a><span class="ref-desc">Aplicación en nómina y facturación de servicios.</span></li>
+                <li><a href="https://developer.apple.com/design/human-interface-guidelines/" target="_blank">Sobre esta aplicación</a><span class="ref-desc">Interfaz diseñada aplicando las normativas de Apple (Human Interface Guidelines), empleando tecnologías web (HTML5, CSS3, TypeScript) y la librería Panzoom para navegación táctil/gestual.</span></li>
             </ul>
             <button class="apple-btn wide" id="close-modal" style="width:100%; margin-top:20px;">Cerrar</button>
         </div>
     </div>
-    <script src="mapa.js?v=LATEST" defer></script>
+    <script src="mapa.js?v=2"></script>
 </body>
 </html>

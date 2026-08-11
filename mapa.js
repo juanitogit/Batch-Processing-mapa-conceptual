@@ -9,109 +9,136 @@ const mapNodes = [
     },
     // Nivel 2
     {
+        id: 'HIST',
+        label: 'Contexto Histórico',
+        desc: 'Nace en los 50s (tarjetas perforadas y monitor residente) para resolver la ineficiencia de operar un programa a la vez, dando origen a los primeros SO.',
+        x: 2500, y: 600
+    },
+    // Nivel 3
+    {
         id: 'REP',
         label: 'Tareas Masivas y Repetitivas',
-        desc: 'Paradigma fundamental para automatizar operaciones mecánicas y de inmenso volumen de datos, reduciendo drásticamente el error humano y los costos operativos.',
-        x: 2500, y: 750
+        desc: 'Paradigma fundamental para automatizar operaciones mecánicas y de inmenso volumen de datos, reduciendo drásticamente el error humano.',
+        x: 2500, y: 1000
     },
-    // Nivel 3 (Características Base y Agrupación de Apps)
+    // Nivel 4 (Características Base y Agrupación de Apps)
     {
         id: 'OFF',
         label: 'Trabajos Offline',
-        desc: 'El usuario prepara el trabajo y los datos en un dispositivo fuera de línea y lo entrega al operador. El sistema se encarga de todo el procesamiento en bloque.',
-        x: 1300, y: 1350
+        desc: 'El usuario prepara el trabajo y los datos en un dispositivo fuera de línea y lo entrega al operador. El sistema procesa en bloque.',
+        x: 1300, y: 1600
     },
     {
         id: 'MON',
         label: 'Monitor de Lotes',
-        desc: 'Programa residente en la parte baja de la memoria que gobierna y orquesta la ejecución de cada lote, garantizando el orden (generalmente FIFO).',
-        x: 2100, y: 1350
+        desc: 'Programa residente que gobierna y orquesta la ejecución de cada lote, garantizando el orden (generalmente FIFO).',
+        x: 2100, y: 1600
     },
     {
         id: 'CPU',
-        label: 'Eficiencia de CPU',
-        desc: 'Prioriza mantener el procesador ocupado el mayor tiempo posible para maximizar el uso de recursos y reducir tiempos muertos en el servidor.',
-        x: 2900, y: 1350
+        label: 'Ventaja: Eficiencia de CPU',
+        desc: 'Prioriza mantener el procesador ocupado el mayor tiempo posible para maximizar el uso de recursos y reducir tiempos muertos.',
+        x: 2900, y: 1600
     },
     {
         id: 'USE',
         label: 'Casos de Uso Principales',
         desc: 'Sectores empresariales y científicos donde procesar datos individualmente sería ineficiente y muy costoso.',
-        x: 3900, y: 1350
+        x: 3900, y: 1600
     },
-    // Nivel 4 (Consecuencias y Aplicaciones)
+    // Nivel 5 (Consecuencias y Aplicaciones)
     {
         id: 'LAT',
-        label: 'Alta Latencia',
-        desc: 'Existe un retraso natural e inevitable entre la recolección de los datos y el resultado obtenido. Inviable para reacción en tiempo real.',
+        label: 'Desventaja: Alta Latencia',
+        desc: 'Existe un retraso natural e inevitable entre la recolección de los datos y el resultado obtenido. Inviable para tiempo real.',
         miniDiagram: 'latency',
-        x: 1000, y: 2000
+        x: 1000, y: 2300
     },
     {
         id: 'ERR',
-        label: 'Efecto Cascada',
+        label: 'Desventaja: Efecto Cascada',
         desc: 'Si un lote falla en una etapa temprana, todo el proceso posterior queda bloqueado. Difícil de depurar sin intervención humana.',
         miniDiagram: 'cascade',
-        x: 1600, y: 2000
+        x: 1600, y: 2300
     },
     {
         id: 'PRC',
         label: 'Flujo de Ejecución',
         desc: 'La ejecución transita por 4 etapas vitales: Encolado, Formación del Lote, Ejecución por CPU, y Generación de Salida (Spooling).',
         isProcess: true,
-        x: 2100, y: 2000
+        x: 2100, y: 2300
     },
     {
         id: 'RDT',
-        label: 'Alto Throughput',
+        label: 'Ventaja: Alto Throughput',
         desc: 'El rendimiento general se dispara ya que la máquina casi no pierde ciclos de reloj esperando inputs interactivos del usuario.',
         miniDiagram: 'throughput',
-        x: 2900, y: 2000
+        x: 2900, y: 2300
     },
     {
         id: 'APP1',
         label: 'Banca y Finanzas',
         desc: 'Liquidación nocturna y conciliaciones.',
         appIcon: 'fa-building-columns',
-        x: 3300, y: 2000
+        x: 3300, y: 2300
     },
     {
         id: 'APP4',
         label: 'Nómina',
         desc: 'Cálculo de salarios y generación de cobros.',
         appIcon: 'fa-file-invoice-dollar',
-        x: 3700, y: 2000
+        x: 3700, y: 2300
     },
     {
         id: 'APP2',
         label: 'Logística y Retail',
         desc: 'Actualización masiva de inventarios.',
         appIcon: 'fa-truck-fast',
-        x: 4100, y: 2000
+        x: 4100, y: 2300
     },
     {
         id: 'APP3',
         label: 'Ciencia',
         desc: 'Simulaciones climáticas y genómicas.',
         appIcon: 'fa-flask',
-        x: 4500, y: 2000
+        x: 4500, y: 2300
     },
-    // Nivel 5 (Tecnologías)
+    // Nivel 6 (Tecnologías y SPOOL)
+    {
+        id: 'SPOOL',
+        label: 'SPOOLing',
+        desc: 'Simultaneous Peripheral Operations On-Line. Usa el disco como buffer para desacoplar a la CPU de dispositivos de E/S lentos.',
+        x: 2100, y: 3000
+    },
     {
         id: 'TEC1',
         label: 'Sistemas Mainframe',
         desc: 'Ecosistema clásico y ultra robusto como IBM z/OS con JCL. En entornos Unix equivalen a tareas automatizadas en cron o at.',
-        x: 3500, y: 2700
+        x: 3500, y: 3000
     },
     {
         id: 'TEC2',
         label: 'Cloud y Big Data',
         desc: 'Soluciones en la nube como AWS Batch, o ecosistemas de procesamiento masivo distribuido como Apache Hadoop y Spark.',
-        x: 4300, y: 2700
+        x: 4300, y: 3000
+    },
+    // Nivel 7 (Ing. Software y Conclusión)
+    {
+        id: 'SOFT',
+        label: 'Relación con Ing. Software',
+        desc: 'Base de arquitecturas modernas: Pipelines de CI/CD (GitHub Actions), procesamiento asíncrono (Colas de mensajes) y tareas programadas.',
+        x: 3900, y: 3700
+    },
+    {
+        id: 'CONC',
+        label: 'Conclusión',
+        desc: 'A pesar de sus orígenes antiguos, el paradigma de agrupar, procesar en bloque y automatizar sigue siendo la piedra angular de la eficiencia.',
+        x: 2500, y: 4300
     }
 ];
 const mapLinks = [
-    { source: 'ROOT', target: 'REP' },
+    { source: 'ROOT', target: 'HIST' },
+    { source: 'HIST', target: 'REP' },
     { source: 'REP', target: 'OFF' },
     { source: 'REP', target: 'MON' },
     { source: 'REP', target: 'CPU' },
@@ -119,6 +146,7 @@ const mapLinks = [
     { source: 'OFF', target: 'LAT' },
     { source: 'OFF', target: 'ERR' },
     { source: 'MON', target: 'PRC' },
+    { source: 'PRC', target: 'SPOOL' },
     { source: 'CPU', target: 'RDT' },
     { source: 'USE', target: 'APP1' },
     { source: 'USE', target: 'APP4' },
@@ -127,7 +155,14 @@ const mapLinks = [
     { source: 'APP1', target: 'TEC1' },
     { source: 'APP4', target: 'TEC1' },
     { source: 'APP2', target: 'TEC2' },
-    { source: 'APP3', target: 'TEC2' }
+    { source: 'APP3', target: 'TEC2' },
+    { source: 'TEC1', target: 'SOFT' },
+    { source: 'TEC2', target: 'SOFT' },
+    { source: 'LAT', target: 'CONC' },
+    { source: 'ERR', target: 'CONC' },
+    { source: 'SPOOL', target: 'CONC' },
+    { source: 'RDT', target: 'CONC' },
+    { source: 'SOFT', target: 'CONC' }
 ];
 document.addEventListener('DOMContentLoaded', () => {
     const nodesLayer = document.getElementById('nodes-layer');
