@@ -181,17 +181,18 @@
         .job-box {
             position: absolute; width: 22px; height: 22px;
             background: var(--apple-blue); border-radius: 6px;
-            top: 25px; z-index: 2; opacity: 0;
+            top: 25px; left: 0; z-index: 2; opacity: 0;
             box-shadow: 0 2px 5px rgba(0,122,255,0.3);
+            will-change: transform, opacity, background-color;
         }
         
         @keyframes batchProcess {
-            0%   { left: -20px; opacity: 1; transform: scale(1); background: var(--apple-blue); }
-            15%  { left: 8%; opacity: 1; transform: scale(1); background: var(--apple-blue); } /* Cola */
-            40%  { left: 35%; opacity: 1; transform: scale(1.3); background: #3b82f6;} /* Lote */
-            65%  { left: 65%; opacity: 1; transform: scale(1.3); background: #8b5cf6;} /* Ejecución */
-            85%  { left: 88%; opacity: 1; transform: scale(1); background: #10b981; } /* Salida */
-            100% { left: 110%; opacity: 0; }
+            0%   { opacity: 0; transform: translate3d(-20px, 0, 0) scale(1); background: var(--apple-blue); }
+            15%  { opacity: 1; transform: translate3d(22px, 0, 0) scale(1); background: var(--apple-blue); } /* Cola */
+            40%  { opacity: 1; transform: translate3d(98px, 0, 0) scale(1.3); background: #3b82f6;} /* Lote */
+            65%  { opacity: 1; transform: translate3d(182px, 0, 0) scale(1.3); background: #8b5cf6;} /* Ejecución */
+            85%  { opacity: 1; transform: translate3d(246px, 0, 0) scale(1); background: #10b981; } /* Salida */
+            100% { opacity: 0; transform: translate3d(308px, 0, 0) scale(1); }
         }
 
         .job-1 { animation: batchProcess 6s infinite linear; animation-delay: 0s; }
